@@ -1,3 +1,8 @@
+/**
+ * Used to resume the current track.
+ * USAGE: /resume
+ */
+
 const { SlashCommandBuilder } = require("@discordjs/builders")
 
 module.exports = {

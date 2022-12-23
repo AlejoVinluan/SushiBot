@@ -1,3 +1,8 @@
+/**
+ * Used to shuffle the current queue.
+ * USAGE: /shuffle
+ */
+
 const { SlashCommandBuilder } = require("@discordjs/builders")
 
 module.exports = {

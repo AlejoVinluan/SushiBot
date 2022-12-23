@@ -1,3 +1,8 @@
+/**
+ * Used to give current song information.
+ * USAGE: /info
+ */
+
 const { SlashCommandBuilder } = require("@discordjs/builders")
 const { EmbedBuilder } = require("discord.js")
 

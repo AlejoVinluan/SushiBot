@@ -1,3 +1,7 @@
+/**
+ * Stops the music player and removes the queue.
+ */
+
 const { SlashCommandBuilder } = require("@discordjs/builders")
 
 module.exports = {

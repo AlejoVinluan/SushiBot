@@ -1,3 +1,8 @@
+/**
+ * Used to skip to a track within the queue
+ * USAGE: /skipto {track number}
+ */
+
 const { SlashCommandBuilder } = require("@discordjs/builders")
 
 module.exports = {

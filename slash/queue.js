@@ -1,3 +1,8 @@
+/**
+ * Used to display the current queue of songs
+ * USAGE: /queue
+ */
+
 const { SlashCommandBuilder } = require("@discordjs/builders")
 const { EmbedBuilder } = require("discord.js")
 

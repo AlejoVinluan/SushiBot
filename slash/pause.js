@@ -1,3 +1,8 @@
+/**
+ * Used to pause the current queue.
+ * USAGE: /pause
+ */
+
 const { SlashCommandBuilder } = require("@discordjs/builders")
 
 module.exports = {

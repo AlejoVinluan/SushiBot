@@ -1,3 +1,8 @@
+/**
+ * Used to load music from a URL, load a playlist from a URL, and search for a song.
+ * USAGE: /play song {link} or /play playlist {link} or /play search {search terms}
+ */
+
 const { SlashCommandBuilder } = require("@discordjs/builders")
 const { EmbedBuilder } = require("discord.js")
 const { QueryType } = require("discord-player")
@@ -21,7 +26,7 @@ module.exports = {
 		.addSubcommand((subcommand) =>
 			subcommand
 				.setName("search")
-				.setDescription("Searches for sogn based on provided keywords")
+				.setDescription("Searches for song based on provided keywords")
 				.addStringOption((option) =>
 					option.setName("searchterms").setDescription("the search keywords").setRequired(true)
 				)
