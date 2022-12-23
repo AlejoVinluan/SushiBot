@@ -1,7 +1,7 @@
 {
-  "name": "SushiBot",
+  "name": "bunmii-bot",
   "version": "0.1",
-  "description": "Music bot for Discord.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": ""
