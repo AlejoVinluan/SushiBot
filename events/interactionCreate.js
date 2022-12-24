@@ -16,7 +16,7 @@ module.exports = {
                 await slashcmd.run({ client, interaction })
             } catch (err) {
                 console.error(`Error executing ${interaction.commandName}`);
-                console.error(error);
+                console.error(err);
             }
         }
         handleCommand()

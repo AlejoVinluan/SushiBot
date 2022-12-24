@@ -6,10 +6,12 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
 
 module.exports = {
-	data: new SlashCommandBuilder().setName("sus").setDescription("Vote to mute the sussy baka")
+	data: new SlashCommandBuilder()
+        .setName("sus")
+        .setDescription("Vote to mute the sussy baka")
         .addUserOption(option => 
-            option.setName("the sussy baka")
-                .setDescription("Who to start a vote mute on")
+            option.setName("target")
+                .setDescription("the sussy baka")
                 .setRequired(true)),
 	run: async ({ client, interaction }) => {
         /**
@@ -20,18 +22,25 @@ module.exports = {
          */
 
         const user = interaction.member;
-        const target = interaction.options.getUser("the sussy baka");
+        const target = interaction.options.getUser("target");
+        console.log("User\n")
+        console.log(user)
+        console.log("Target\n")
+        console.log(target)
 
-        if (user === target) return interaction.reply({ content: `You can't vote yourself, you sussy baka`, ephemeral: true})
+        //if (user.id === target.id) return interaction.editReply(`You can't vote yourself, you sussy baka`)
 
         // Check that the user is in VC
-        if (!user.voice.channel) return interaction.reply({ content: 'Must be in a VC to vote mute someone', ephemeral: true })
+        if (!user.voice.channel) 
+            return interaction.editReply('Join a VC before trying to vote someone LMAO')
 
+        console.log(user.voice);
         // Check that the user is in the same VC as the target
-        if(user.voice.channel !== target.voice.channel) return interaction.reply({ content: 'Target must be in a VC with you to vote mute', ephemeral: true })
+        if(user.voice.channelId !== target.voice.channelId) 
+            return interaction.editReply(`You can't just try to vote out ${target.username}#${target.discriminator}. They have to be in a channel with you!`)
         
-        
+        const channelSize = user.voice.channel.members.size;
 
-        await interaction.reply(``)
+        await interaction.editReply(`Test here`)
 	},
 }
