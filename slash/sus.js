@@ -23,24 +23,20 @@ module.exports = {
 
         const user = interaction.member;
         const target = interaction.options.getUser("target");
-        console.log("User\n")
-        console.log(user)
-        console.log("Target\n")
-        console.log(target)
 
-        //if (user.id === target.id) return interaction.editReply(`You can't vote yourself, you sussy baka`)
+        // Check that user isn't trying to vote themselves
+        if (user.id === target.id) 
+            return interaction.editReply(`You can't vote yourself, you sussy baka`)
 
         // Check that the user is in VC
-        if (!user.voice.channel) 
+        if (!user.voice.channelId) 
             return interaction.editReply('Join a VC before trying to vote someone LMAO')
 
-        console.log(user.voice);
-        // Check that the user is in the same VC as the target
-        if(user.voice.channelId !== target.voice.channelId) 
+        // Check if user and target are in same VC
+        if(!user.voice.channel.members.has(target.id)) 
             return interaction.editReply(`You can't just try to vote out ${target.username}#${target.discriminator}. They have to be in a channel with you!`)
-        
+
         const channelSize = user.voice.channel.members.size;
 
-        await interaction.editReply(`Test here`)
 	},
 }
